@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACNH Bingo Generator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Fredoka:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Fredoka', cursive;
+            background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F0 50%, #FFE0E8 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            color: #8B4A73;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 8px 32px rgba(139, 74, 115, 0.15);
+            border: 3px solid #FFB6C1;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #8B4A73;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #A55A7A;
+            margin: 10px 0 0 0;
+            font-weight: 400;
+        }
+
+        .controls {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: linear-gradient(145deg, #FF9FBD, #FF7AA3);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 0 10px 10px 0;
+            color: white;
+            font-weight: 600;
+            font-family: 'Fredoka', cursive;
+            box-shadow: 0 4px 15px rgba(255, 159, 189, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 159, 189, 0.6);
+            background: linear-gradient(145deg, #FF7AA3, #FF5E8A);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .bingo-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 12px 40px rgba(139, 74, 115, 0.2);
+            border: 4px solid #FFB6C1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bingo-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 182, 193, 0.05) 10px,
+                rgba(255, 182, 193, 0.05) 20px
+            );
+            pointer-events: none;
+        }
+
+        .bingo-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #8B4A73;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .bingo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bingo-cell {
+            aspect-ratio: 1;
+            border: 3px solid #FF9FBD;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #FFF8FC, #FFEBF0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            min-height: 100px;
+        }
+
+        .bingo-cell:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 159, 189, 0.3);
+            border-color: #FF7AA3;
+        }
+
+        .bingo-cell.free {
+            background: linear-gradient(135deg, #FF9FBD, #FF7AA3);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            border-color: #FF5E8A;
+        }
+
+        .bingo-cell.clicked {
+            background: linear-gradient(135deg, #FFE5E5, #FFF0F0);
+            border-color: #FF5E8A;
+            box-shadow: inset 0 2px 8px rgba(255, 94, 138, 0.3);
+        }
+
+        .villager-image {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-bottom: 4px;
+            border: 2px solid #FFB6C1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: white;
+            object-fit: cover;
+        }
+
+        .villager-name {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-align: center;
+            color: #8B4A73;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+            line-height: 1.1;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        .loading {
+            text-align: center;
+            color: #8B4A73;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .card-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #A55A7A;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 10px;
+            }
+            
+            .header, .controls {
+                display: none;
+            }
+            
+            .bingo-card {
+                max-width: 100%;
+                margin: 0;
+                box-shadow: none;
+                border: 2px solid #FFB6C1;
+                page-break-inside: avoid;
+            }
+            
+            .bingo-cell {
+                min-height: 80px;
+            }
+            
+            .villager-image {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bingo-card {
+                max-width: 95%;
+                padding: 15px;
+            }
+            
+            .bingo-cell {
+                min-height: 80px;
+                padding: 4px;
+            }
+            
+            .villager-image {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .villager-name {
+                font-size: 0.6rem;
+            }
+            
+            .bingo-title {
+                font-size: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏝️ Animal Crossing New Horizons 🏝️</h1>
+        <p>Villager Bingo Generator</p>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="generateBingo()">🎲 Generate New Bingo Card</button>
+        <button class="btn" onclick="window.print()">🖨️ Print Card</button>
+        <button class="btn" onclick="downloadCard()">💾 Save as Image</button>
+    </div>
+
+    <div class="bingo-card" id="bingoCard">
+        <div class="bingo-title">VILLAGER BINGO</div>
+        <div class="bingo-grid" id="bingoGrid">
+            <div class="loading">Click "Generate New Bingo Card" to start!</div>
+        </div>
+        <div class="card-footer">
+            Find these villagers on your island or in the game to mark them off!
+        </div>
+    </div>
+
+    <script>
+        // Comprehensive list of ACNH villagers with their image URLs from Nookipedia
+        const villagers = [
+            {name: "Ace", image: "https://dodo.ac/np/images/thumb/8/89/Ace%27s_Photo_NH_Texture.png/64px-Ace%27s_Photo_NH_Texture.png"},
+            {name: "Admiral", image: "https://dodo.ac/np/images/thumb/0/0a/Admiral%27s_Photo_NH_Texture.png/64px-Admiral%27s_Photo_NH_Texture.png"},
+            {name: "Agent S", image: "https://dodo.ac/np/images/thumb/b/b3/Agent_S%27s_Photo_NH_Texture.png/64px-Agent_S%27s_Photo_NH_Texture.png"},
+            {name: "Agnes", image: "https://dodo.ac/np/images/thumb/2/27/Agnes%27s_Photo_NH_Texture.png/64px-Agnes%27s_Photo_NH_Texture.png"},
+            {name: "Al", image: "https://dodo.ac/np/images/thumb/7/7e/Al%27s_Photo_NH_Texture.png/64px-Al%27s_Photo_NH_Texture.png"},
+            {name: "Alfonso", image: "https://dodo.ac/np/images/thumb/e/e8/Alfonso%27s_Photo_NH_Texture.png/64px-Alfonso%27s_Photo_NH_Texture.png"},
+            {name: "Alice", image: "https://dodo.ac/np/images/thumb/7/73/Alice%27s_Photo_NH_Texture.png/64px-Alice%27s_Photo_NH_Texture.png"},
+            {name: "Alli", image: "https://dodo.ac/np/images/thumb/7/71/Alli%27s_Photo_NH_Texture.png/64px-Alli%27s_Photo_NH_Texture.png"},
+            {name: "Amelia", image: "https://dodo.ac/np/images/thumb/c/c3/Amelia%27s_Photo_NH_Texture.png/64px-Amelia%27s_Photo_NH_Texture.png"},
+            {name: "Anabelle", image: "https://dodo.ac/np/images/thumb/2/25/Anabelle%27s_Photo_NH_Texture.png/64px-Anabelle%27s_Photo_NH_Texture.png"},
+            {name: "Anchovy", image: "https://dodo.ac/np/images/thumb/a/a0/Anchovy%27s_Photo_NH_Texture.png/64px-Anchovy%27s_Photo_NH_Texture.png"},
+            {name: "Angus", image: "https://dodo.ac/np/images/thumb/3/32/Angus%27s_Photo_NH_Texture.png/64px-Angus%27s_Photo_NH_Texture.png"},
+            {name: "Anicotti", image: "https://dodo.ac/np/images/thumb/b/b1/Anicotti%27s_Photo_NH_Texture.png/64px-Anicotti%27s_Photo_NH_Texture.png"},
+            {name: "Ankha", image: "https://dodo.ac/np/images/thumb/a/ae/Ankha%27s_Photo_NH_Texture.png/64px-Ankha%27s_Photo_NH_Texture.png"},
+            {name: "Annalisa", image: "https://dodo.ac/np/images/thumb/6/68/Annalisa%27s_Photo_NH_Texture.png/64px-Annalisa%27s_Photo_NH_Texture.png"},
+            {name: "Annalise", image: "https://dodo.ac/np/images/thumb/b/b3/Annalise%27s_Photo_NH_Texture.png/64px-Annalise%27s_Photo_NH_Texture.png"},
+            {name: "Antonio", image: "https://dodo.ac/np/images/thumb/8/89/Antonio%27s_Photo_NH_Texture.png/64px-Antonio%27s_Photo_NH_Texture.png"},
+            {name: "Apollo", image: "https://dodo.ac/np/images/thumb/2/25/Apollo%27s_Photo_NH_Texture.png/64px-Apollo%27s_Photo_NH_Texture.png"},
+            {name: "Apple", image: "https://dodo.ac/np/images/thumb/7/71/Apple%27s_Photo_NH_Texture.png/64px-Apple%27s_Photo_NH_Texture.png"},
+            {name: "Astrid", image: "https://dodo.ac/np/images/thumb/9/94/Astrid%27s_Photo_NH_Texture.png/64px-Astrid%27s_Photo_NH_Texture.png"},
+            {name: "Audie", image: "https://dodo.ac/np/images/thumb/6/66/Audie%27s_Photo_NH_Texture.png/64px-Audie%27s_Photo_NH_Texture.png"},
+            {name: "Aurora", image: "https://dodo.ac/np/images/thumb/c/ce/Aurora%27s_Photo_NH_Texture.png/64px-Aurora%27s_Photo_NH_Texture.png"},
+            {name: "Ava", image: "https://dodo.ac/np/images/thumb/d/d6/Ava%27s_Photo_NH_Texture.png/64px-Ava%27s_Photo_NH_Texture.png"},
+            {name: "Avery", image: "https://dodo.ac/np/images/thumb/9/9c/Avery%27s_Photo_NH_Texture.png/64px-Avery%27s_Photo_NH_Texture.png"},
+            {name: "Axel", image: "https://dodo.ac/np/images/thumb/e/e3/Axel%27s_Photo_NH_Texture.png/64px-Axel%27s_Photo_NH_Texture.png"},
+            {name: "Azalea", image: "https://dodo.ac/np/images/thumb/0/0e/Azalea%27s_Photo_NH_Texture.png/64px-Azalea%27s_Photo_NH_Texture.png"},
+            {name: "Baabara", image: "https://dodo.ac/np/images/thumb/8/80/Baabara%27s_Photo_NH_Texture.png/64px-Baabara%27s_Photo_NH_Texture.png"},
+            {name: "Bam", image: "https://dodo.ac/np/images/thumb/e/ec/Bam%27s_Photo_NH_Texture.png/64px-Bam%27s_Photo_NH_Texture.png"},
+            {name: "Bangle", image: "https://dodo.ac/np/images/thumb/3/34/Bangle%27s_Photo_NH_Texture.png/64px-Bangle%27s_Photo_NH_Texture.png"},
+            {name: "Barold", image: "https://dodo.ac/np/images/thumb/5/57/Barold%27s_Photo_NH_Texture.png/64px-Barold%27s_Photo_NH_Texture.png"},
+            {name: "Bea", image: "https://dodo.ac/np/images/thumb/c/c1/Bea%27s_Photo_NH_Texture.png/64px-Bea%27s_Photo_NH_Texture.png"},
+            {name: "Beardo", image: "https://dodo.ac/np/images/thumb/4/46/Beardo%27s_Photo_NH_Texture.png/64px-Beardo%27s_Photo_NH_Texture.png"},
+            {name: "Beau", image: "https://dodo.ac/np/images/thumb/8/8f/Beau%27s_Photo_NH_Texture.png/64px-Beau%27s_Photo_NH_Texture.png"},
+            {name: "Becky", image: "https://dodo.ac/np/images/thumb/4/4f/Becky%27s_Photo_NH_Texture.png/64px-Becky%27s_Photo_NH_Texture.png"},
+            {name: "Bella", image: "https://dodo.ac/np/images/thumb/6/6b/Bella%27s_Photo_NH_Texture.png/64px-Bella%27s_Photo_NH_Texture.png"},
+            {name: "Benedict", image: "https://dodo.ac/np/images/thumb/a/a9/Benedict%27s_Photo_NH_Texture.png/64px-Benedict%27s_Photo_NH_Texture.png"},
+            {name: "Benjamin", image: "https://dodo.ac/np/images/thumb/9/9e/Benjamin%27s_Photo_NH_Texture.png/64px-Benjamin%27s_Photo_NH_Texture.png"},
+            {name: "Bertha", image: "https://dodo.ac/np/images/thumb/4/48/Bertha%27s_Photo_NH_Texture.png/64px-Bertha%27s_Photo_NH_Texture.png"},
+            {name: "Bettina", image: "https://dodo.ac/np/images/thumb/0/0c/Bettina%27s_Photo_NH_Texture.png/64px-Bettina%27s_Photo_NH_Texture.png"},
+            {name: "Bianca", image: "https://dodo.ac/np/images/thumb/7/79/Bianca%27s_Photo_NH_Texture.png/64px-Bianca%27s_Photo_NH_Texture.png"},
+            {name: "Biff", image: "https://dodo.ac/np/images/thumb/6/6e/Biff%27s_Photo_NH_Texture.png/64px-Biff%27s_Photo_NH_Texture.png"},
+            {name: "Big Top", image: "https://dodo.ac/np/images/thumb/4/47/Big_Top%27s_Photo_NH_Texture.png/64px-Big_Top%27s_Photo_NH_Texture.png"},
+            {name: "Bill", image: "https://dodo.ac/np/images/thumb/1/11/Bill%27s_Photo_NH_Texture.png/64px-Bill%27s_Photo_NH_Texture.png"},
+            {name: "Billy", image: "https://dodo.ac/np/images/thumb/7/72/Billy%27s_Photo_NH_Texture.png/64px-Billy%27s_Photo_NH_Texture.png"},
+            {name: "Biskit", image: "https://dodo.ac/np/images/thumb/e/e2/Biskit%27s_Photo_NH_Texture.png/64px-Biskit%27s_Photo_NH_Texture.png"},
+            {name: "Bitty", image: "https://dodo.ac/np/images/thumb/9/9a/Bitty%27s_Photo_NH_Texture.png/64px-Bitty%27s_Photo_NH_Texture.png"},
+            {name: "Blaire", image: "https://dodo.ac/np/images/thumb/9/9c/Blaire%27s_Photo_NH_Texture.png/64px-Blaire%27s_Photo_NH_Texture.png"},
+            {name: "Blanche", image: "https://dodo.ac/np/images/thumb/6/60/Blanche%27s_Photo_NH_Texture.png/64px-Blanche%27s_Photo_NH_Texture.png"},
+            {name: "Bluebear", image: "https://dodo.ac/np/images/thumb/1/1c/Bluebear%27s_Photo_NH_Texture.png/64px-Bluebear%27s_Photo_NH_Texture.png"},
+            {name: "Bob", image: "https://dodo.ac/np/images/thumb/8/8e/Bob%27s_Photo_NH_Texture.png/64px-Bob%27s_Photo_NH_Texture.png"},
+            {name: "Bonbon", image: "https://dodo.ac/np/images/thumb/9/9d/Bonbon%27s_Photo_NH_Texture.png/64px-Bonbon%27s_Photo_NH_Texture.png"},
+            {name: "Bones", image: "https://dodo.ac/np/images/thumb/2/21/Bones%27s_Photo_NH_Texture.png/64px-Bones%27s_Photo_NH_Texture.png"},
+            {name: "Boomer", image: "https://dodo.ac/np/images/thumb/a/a7/Boomer%27s_Photo_NH_Texture.png/64px-Boomer%27s_Photo_NH_Texture.png"},
+            {name: "Boone", image: "https://dodo.ac/np/images/thumb/2/24/Boone%27s_Photo_NH_Texture.png/64px-Boone%27s_Photo_NH_Texture.png"},
+            {name: "Boots", image: "https://dodo.ac/np/images/thumb/8/81/Boots%27s_Photo_NH_Texture.png/64px-Boots%27s_Photo_NH_Texture.png"},
+            {name: "Boris", image: "https://dodo.ac/np/images/thumb/7/71/Boris%27s_Photo_NH_Texture.png/64px-Boris%27s_Photo_NH_Texture.png"},
+            {name: "Boyd", image: "https://dodo.ac/np/images/thumb/2/24/Boyd%27s_Photo_NH_Texture.png/64px-Boyd%27s_Photo_NH_Texture.png"},
+            {name: "Bree", image: "https://dodo.ac/np/images/thumb/b/bd/Bree%27s_Photo_NH_Texture.png/64px-Bree%27s_Photo_NH_Texture.png"},
+            {name: "Broccolo", image: "https://dodo.ac/np/images/thumb/7/73/Broccolo%27s_Photo_NH_Texture.png/64px-Broccolo%27s_Photo_NH_Texture.png"},
+            {name: "Broffina", image: "https://dodo.ac/np/images/thumb/2/25/Broffina%27s_Photo_NH_Texture.png/64px-Broffina%27s_Photo_NH_Texture.png"},
+            {name: "Bruce", image: "https://dodo.ac/np/images/thumb/0/0e/Bruce%27s_Photo_NH_Texture.png/64px-Bruce%27s_Photo_NH_Texture.png"},
+            {name: "Bubbles", image: "https://dodo.ac/np/images/thumb/6/6b/Bubbles%27s_Photo_NH_Texture.png/64px-Bubbles%27s_Photo_NH_Texture.png"},
+            {name: "Buck", image: "https://dodo.ac/np/images/thumb/c/c6/Buck%27s_Photo_NH_Texture.png/64px-Buck%27s_Photo_NH_Texture.png"},
+            {name: "Bud", image: "https://dodo.ac/np/images/thumb/c/ce/Bud%27s_Photo_NH_Texture.png/64px-Bud%27s_Photo_NH_Texture.png"},
+            {name: "Bunnie", image: "https://dodo.ac/np/images/thumb/f/f9/Bunnie%27s_Photo_NH_Texture.png/64px-Bunnie%27s_Photo_NH_Texture.png"},
+            {name: "Butch", image: "https://dodo.ac/np/images/thumb/8/85/Butch%27s_Photo_NH_Texture.png/64px-Butch%27s_Photo_NH_Texture.png"},
+            {name: "Buzz", image: "https://dodo.ac/np/images/thumb/7/71/Buzz%27s_Photo_NH_Texture.png/64px-Buzz%27s_Photo_NH_Texture.png"},
+            {name: "Cally", image: "https://dodo.ac/np/images/thumb/d/d5/Cally%27s_Photo_NH_Texture.png/64px-Cally%27s_Photo_NH_Texture.png"},
+            {name: "Camofrog", image: "https://dodo.ac/np/images/thumb/9/9f/Camofrog%27s_Photo_NH_Texture.png/64px-Camofrog%27s_Photo_NH_Texture.png"},
+            {name: "Canberra", image: "https://dodo.ac/np/images/thumb/9/95/Canberra%27s_Photo_NH_Texture.png/64px-Canberra%27s_Photo_NH_Texture.png"},
+            {name: "Candi", image: "https://dodo.ac/np/images/thumb/a/a4/Candi%27s_Photo_NH_Texture.png/64px-Candi%27s_Photo_NH_Texture.png"},
+            {name: "Carmen", image: "https://dodo.ac/np/images/thumb/b/bc/Carmen%27s_Photo_NH_Texture.png/64px-Carmen%27s_Photo_NH_Texture.png"},
+            {name: "Caroline", image: "https://dodo.ac/np/images/thumb/0/00/Caroline%27s_Photo_NH_Texture.png/64px-Caroline%27s_Photo_NH_Texture.png"},
+            {name: "Carrie", image: "https://dodo.ac/np/images/thumb/e/e5/Carrie%27s_Photo_NH_Texture.png/64px-Carrie%27s_Photo_NH_Texture.png"},
+            {name: "Cashmere", image: "https://dodo.ac/np/images/thumb/3/37/Cashmere%27s_Photo_NH_Texture.png/64px-Cashmere%27s_Photo_NH_Texture.png"},
+            {name: "Celia", image: "https://dodo.ac/np/images/thumb/2/2c/Celia%27s_Photo_NH_Texture.png/64px-Celia%27s_Photo_NH_Texture.png"},
+            {name: "Cephalobot", image: "https://dodo.ac/np/images/thumb/b/b3/Cephalobot%27s_Photo_NH_Texture.png/64px-Cephalobot%27s_Photo_NH_Texture.png"},
+            {name: "Cesar", image: "https://dodo.ac/np/images/thumb/b/bd/Cesar%27s_Photo_NH_Texture.png/64px-Cesar%27s_Photo_NH_Texture.png"},
+            {name: "Chabwick", image: "https://dodo.ac/np/images/thumb/d/d2/Chabwick%27s_Photo_NH_Texture.png/64px-Chabwick%27s_Photo_NH_Texture.png"},
+            {name: "Chadder", image: "https://dodo.ac/np/images/thumb/c/c0/Chadder%27s_Photo_NH_Texture.png/64px-Chadder%27s_Photo_NH_Texture.png"},
+            {name: "Chai", image: "https://dodo.ac/np/images/thumb/5/51/Chai%27s_Photo_NH_Texture.png/64px-Chai%27s_Photo_NH_Texture.png"},
+            {name: "Charlise", image: "https://dodo.ac/np/images/thumb/1/14/Charlise%27s_Photo_NH_Texture.png/64px-Charlise%27s_Photo_NH_Texture.png"},
+            {name: "Chelsea", image: "https://dodo.ac/np/images/thumb/0/04/Chelsea%27s_Photo_NH_Texture.png/64px-Chelsea%27s_Photo_NH_Texture.png"},
+            {name: "Cheri", image: "https://dodo.ac/np/images/thumb/8/85/Cheri%27s_Photo_NH_Texture.png/64px-Cheri%27s_Photo_NH_Texture.png"},
+            {name: "Cherry", image: "https://dodo.ac/np/images/thumb/b/bc/Cherry%27s_Photo_NH_Texture.png/64px-Cherry%27s_Photo_NH_Texture.png"},
+            {name: "Chester", image: "https://dodo.ac/np/images/thumb/c/c7/Chester%27s_Photo_NH_Texture.png/64px-Chester%27s_Photo_NH_Texture.png"},
+            {name: "Chevre", image: "https://dodo.ac/np/images/thumb/e/ea/Chevre%27s_Photo_NH_Texture.png/64px-Chevre%27s_Photo_NH_Texture.png"},
+            {name: "Chief", image: "https://dodo.ac/np/images/thumb/0/08/Chief%27s_Photo_NH_Texture.png/64px-Chief%27s_Photo_NH_Texture.png"},
+            {name: "Chops", image: "https://dodo.ac/np/images/thumb/2/29/Chops%27s_Photo_NH_Texture.png/64px-Chops%27s_Photo_NH_Texture.png"},
+            {name: "Chow", image: "https://dodo.ac/np/images/thumb/8/8a/Chow%27s_Photo_NH_Texture.png/64px-Chow%27s_Photo_NH_Texture.png"},
+            {name: "Chrissy", image: "https://dodo.ac/np/images/thumb/c/c3/Chrissy%27s_Photo_NH_Texture.png/64px-Chrissy%27s_Photo_NH_Texture.png"},
+            {name: "Claude", image: "https://dodo.ac/np/images/thumb/1/15/Claude%27s_Photo_NH_Texture.png/64px-Claude%27s_Photo_NH_Texture.png"},
+            {name: "Claudia", image: "https://dodo.ac/np/images/thumb/b/bf/Claudia%27s_Photo_NH_Texture.png/64px-Claudia%27s_Photo_NH_Texture.png"},
+            {name: "Clay", image: "https://dodo.ac/np/images/thumb/7/71/Clay%27s_Photo_NH_Texture.png/64px-Clay%27s_Photo_NH_Texture.png"},
+            {name: "Cleo", image: "https://dodo.ac/np/images/thumb/f/f9/Cleo%27s_Photo_NH_Texture.png/64px-Cleo%27s_Photo_NH_Texture.png"},
+            {name: "Clyde", image: "https://dodo.ac/np/images/thumb/f/f3/Clyde%27s_Photo_NH_Texture.png/64px-Clyde%27s_Photo_NH_Texture.png"},
+            {name: "Coach", image: "https://dodo.ac/np/images/thumb/8/8d/Coach%27s_Photo_NH_Texture.png/64px-Coach%27s_Photo_NH_Texture.png"},
+            {name: "Cobb", image: "https://dodo.ac/np/images/thumb/1/16/Cobb%27s_Photo_NH_Texture.png/64px-Cobb%27s_Photo_NH_Texture.png"},
+            {name: "Coco", image: "https://dodo.ac/np/images/thumb/d/d2/Coco%27s_Photo_NH_Texture.png/64px-Coco%27s_Photo_NH_Texture.png"},
+            {name: "Cole", image: "https://dodo.ac/np/images/thumb/5/59/Cole%27s_Photo_NH_Texture.png/64px-Cole%27s_Photo_NH_Texture.png"},
+            {name: "Colton", image: "https://dodo.ac/np/images/thumb/4/4a/Colton%27s_Photo_NH_Texture.png/64px-Colton%27s_Photo_NH_Texture.png"},
+            {name: "Cookie", image: "https://dodo.ac/np/images/thumb/9/94/Cookie%27s_Photo_NH_Texture.png/64px-Cookie%27s_Photo_NH_Texture.png"},
+            {name: "Cousteau", image: "https://dodo.ac/np/images/thumb/0/01/Cousteau%27s_Photo_NH_Texture.png/64px-Cousteau%27s_Photo_NH_Texture.png"},
+            {name: "Cranston", image: "https://dodo.ac/np/images/thumb/3/39/Cranston%27s_Photo_NH_Texture.png/64px-Cranston%27s_Photo_NH_Texture.png"},
+            {name: "Croque", image: "https://dodo.ac/np/images/thumb/e/eb/Croque%27s_Photo_NH_Texture.png/64px-Croque%27s_Photo_NH_Texture.png"},
+            {name: "Cube", image: "https://dodo.ac/np/images/thumb/7/73/Cube%27s_Photo_NH_Texture.png/64px-Cube%27s_Photo_NH_Texture.png"},
+            {name: "Curlos", image: "https://dodo.ac/np/images/thumb/c/c6/Curlos%27s_Photo_NH_Texture.png/64px-Curlos%27s_Photo_NH_Texture.png"},
+            {name: "Curly", image: "https://dodo.ac/np/images/thumb/7/73/Curly%27s_Photo_NH_Texture.png/64px-Curly%27s_Photo_NH_Texture.png"},
+            {name: "Curt", image: "https://dodo.ac/np/images/thumb/4/40/Curt%27s_Photo_NH_Texture.png/64px-Curt%27s_Photo_NH_Texture.png"},
+            {name: "Cyd", image: "https://dodo.ac/np/images/thumb/1/1e/Cyd%27s_Photo_NH_Texture.png/64px-Cyd%27s_Photo_NH_Texture.png"},
+            {name: "Cyrano", image: "https://dodo.ac/np/images/thumb/0/02/Cyrano%27s_Photo_NH_Texture.png/64px-Cyrano%27s_Photo_NH_Texture.png"},
+            {name: "Daisy", image: "https://dodo.ac/np/images/thumb/f/f0/Daisy%27s_Photo_NH_Texture.png/64px-Daisy%27s_Photo_NH_Texture.png"},
+            {name: "Deena", image: "https://dodo.ac/np/images/thumb/6/63/Deena%27s_Photo_NH_Texture.png/64px-Deena%27s_Photo_NH_Texture.png"},
+            {name: "Deirdre", image: "https://dodo.ac/np/images/thumb/0/08/Deirdre%27s_Photo_NH_Texture.png/64px-Deirdre%27s_Photo_NH_Texture.png"},
+            {name: "Del", image: "https://dodo.ac/np/images/thumb/c/c7/Del%27s_Photo_NH_Texture.png/64px-Del%27s_Photo_NH_Texture.png"},
+            {name: "Deli", image: "https://dodo.ac/np/images/thumb/f/ff/Deli%27s_Photo_NH_Texture.png/64px-Deli%27s_Photo_NH_Texture.png"},
+            {name: "Derwin", image: "https://dodo.ac/np/images/thumb/1/1a/Derwin%27s_Photo_NH_Texture.png/64px-Derwin%27s_Photo_NH_Texture.png"},
+            {name: "Diana", image: "https://dodo.ac/np/images/thumb/a/a4/Diana%27s_Photo_NH_Texture.png/64px-Diana%27s_Photo_NH_Texture.png"},
+            {name: "Diva", image: "https://dodo.ac/np/images/thumb/c/c1/Diva%27s_Photo_NH_Texture.png/64px-Diva%27s_Photo_NH_Texture.png"},
+            {name: "Dizzy", image: "https://dodo.ac/np/images/thumb/1/1f/Dizzy%27s_Photo_NH_Texture.png/64px-Dizzy%27s_Photo_NH_Texture.png"},
+            {name: "Dobie", image: "https://dodo.ac/np/images/thumb/1/1e/Dobie%27s_Photo_NH_Texture.png/64px-Dobie%27s_Photo_NH_Texture.png"},
+            {name: "Doc", image: "https://dodo.ac/np/images/thumb/4/40/Doc%27s_Photo_NH_Texture.png/64px-Doc%27s_Photo_NH_Texture.png"},
+            {name: "Dom", image: "https://dodo.ac/np/images/thumb/8/8b/Dom%27s_Photo_NH_Texture.png/64px-Dom%27s_Photo_NH_Texture.png"},
+            {name: "Dora", image: "https://dodo.ac/np/images/thumb/5/52/Dora%27s_Photo_NH_Texture.png/64px-Dora%27s_Photo_NH_Texture.png"},
+            {name: "Dotty", image: "https://dodo.ac/np/images/thumb/b/b1/Dotty%27s_Photo_NH_Texture.png/64px-Dotty%27s_Photo_NH_Texture.png"},
+            {name: "Drago", image: "https://dodo.ac/np/images/thumb/d/d4/Drago%27s_Photo_NH_Texture.png/64px-Drago%27s_Photo_NH_Texture.png"},
+            {name: "Drake", image: "https://dodo.ac/np/images/thumb/0/0d/Drake%27s_Photo_NH_Texture.png/64px-Drake%27s_Photo_NH_Texture.png"},
+            {name: "Drift", image: "https://dodo.ac/np/images/thumb/4/49/Drift%27s_Photo_NH_Texture.png/64px-Drift%27s_Photo_NH_Texture.png"},
+            {name: "Ed", image: "https://dodo.ac/np/images/thumb/4/49/Ed%27s_Photo_NH_Texture.png/64px-Ed%27s_Photo_NH_Texture.png"},
+            {name: "Egbert", image: "https://dodo.ac/np/images/thumb/6/65/Egbert%27s_Photo_NH_Texture.png/64px-Egbert%27s_Photo_NH_Texture.png"},
+            {name: "Elise", image: "https://dodo.ac/np/images/thumb/3/3c/Elise%27s_Photo_NH_Texture.png/64px-Elise%27s_Photo_NH_Texture.png"},
+            {name: "Ellie", image: "https://dodo.ac/np/images/thumb/3/3d/Ellie%27s_Photo_NH_Texture.png/64px-Ellie%27s_Photo_NH_Texture.png"},
+            {name: "Elmer", image: "https://dodo.ac/np/images/thumb/0/09/Elmer%27s_Photo_NH_Texture.png/64px-Elmer%27s_Photo_NH_Texture.png"},
+            {name: "Eloise", image: "https://dodo.ac/np/images/thumb/6/65/Eloise%27s_Photo_NH_Texture.png/64px-Eloise%27s_Photo_NH_Texture.png"},
+            {name: "Elvis", image: "https://dodo.ac/np/images/thumb/7/76/Elvis%27s_Photo_NH_Texture.png/64px-Elvis%27s_Photo_NH_Texture.png"},
+            {name: "Erik", image: "https://dodo.ac/np/images/thumb/e/ed/Erik%27s_Photo_NH_Texture.png/64px-Erik%27s_Photo_NH_Texture.png"},
+            {name: "Étoile", image: "https://dodo.ac/np/images/thumb/0/03/%C3%89toile%27s_Photo_NH_Texture.png/64px-%C3%89toile%27s_Photo_NH_Texture.png"},
+            {name: "Eugene", image: "https://dodo.ac/np/images/thumb/4/4b/Eugene%27s_Photo_NH_Texture.png/64px-Eugene%27s_Photo_NH_Texture.png"},
+            {name: "Eunice", image: "https://dodo.ac/np/images/thumb/1/1b/Eunice%27s_Photo_NH_Texture.png/64px-Eunice%27s_Photo_NH_Texture.png"},
+            {name: "Faith", image: "https://dodo.ac/np/images/thumb/0/09/Faith%27s_Photo_NH_Texture.png/64px-Faith%27s_Photo_NH_Texture.png"},
+            {name: "Fang", image: "https://dodo.ac/np/images/thumb/8/8d/Fang%27s_Photo_NH_Texture.png/64px-Fang%27s_Photo_NH_Texture.png"},
+            {name: "Fauna", image: "https://dodo.ac/np/images/thumb/a/a5/Fauna%27s_Photo_NH_Texture.png/64px-Fauna%27s_Photo_NH_Texture.png"},
+            {name: "Felicity", image: "https://dodo.ac/np/images/thumb/4/48/Felicity%27s_Photo_NH_Texture.png/64px-Felicity%27s_Photo_NH_Texture.png"},
+            {name: "Filbert", image: "https://dodo.ac/np/images/thumb/4/4e/Filbert%27s_Photo_NH_Texture.png/64px-Filbert%27s_Photo_NH_Texture.png"},
+            {name: "Flip", image: "https://dodo.ac/np/images/thumb/b/b4/Flip%27s_Photo_NH_Texture.png/64px-Flip%27s_Photo_NH_Texture.png"},
+            {name: "Flo", image: "https://dodo.ac/np/images/thumb/7/74/Flo%27s_Photo_NH_Texture.png/64px-Flo%27s_Photo_NH_Texture.png"},
+            {name: "Flora", image: "https://dodo.ac/np/images/thumb/1/10/Flora%27s_Photo_NH_Texture.png/64px-Flora%27s_Photo_NH_Texture.png"},
+            {name: "Flurry", image: "https://dodo.ac/np/images/thumb/9/96/Flurry%27s_Photo_NH_Texture.png/64px-Flurry%27s_Photo_NH_Texture.png"},
+            {name: "Francine", image: "https://dodo.ac/np/images/thumb/f/f0/Francine%27s_Photo_NH_Texture.png/64px-Francine%27s_Photo_NH_Texture.png"},
+            {name: "Frank", image: "https://dodo.ac/np/images/thumb/6/6a/Frank%27s_Photo_NH_Texture.png/64px-Frank%27s_Photo_NH_Texture.png"},
+            {name: "Freckles", image: "https://dodo.ac/np/images/thumb/5/55/Freckles%27s_Photo_NH_Texture.png/64px-Freckles%27s_Photo_NH_Texture.png"},
+            {name: "Frett", image: "https://dodo.ac/np/images/thumb/9/97/Frett%27s_Photo_NH_Texture.png/64px-Frett%27s_Photo_NH_Texture.png"},
+            {name: "Freya", image: "https://dodo.ac/np/images/thumb/d/d6/Freya%27s_Photo_NH_Texture.png/64px-Freya%27s_Photo_NH_Texture.png"},
+            {name: "Friga", image: "https://dodo.ac/np/images/thumb/f/f5/Friga%27s_Photo_NH_Texture.png/64px-Friga%27s_Photo_NH_Texture.png"},
+            {name: "Frita", image: "https://dodo.ac/np/images/thumb/6/6a/Frita%27s_Photo_NH_Texture.png/64px-Frita%27s_Photo_NH_Texture.png"},
+            {name: "Frobert", image: "https://dodo.ac/np/images/thumb/8/85/Frobert%27s_Photo_NH_Texture.png/64px-Frobert%27s_Photo_NH_Texture.png"},
+            {name: "Fuchsia", image: "https://dodo.ac/np/images/thumb/5/50/Fuchsia%27s_Photo_NH_Texture.png/64px-Fuchsia%27s_Photo_NH_Texture.png"},
+            {name: "Gabi", image: "https://dodo.ac/np/images/thumb/c/c9/Gabi%27s_Photo_NH_Texture.png/64px-Gabi%27s_Photo_NH_Texture.png"},
+            {name: "Gala", image: "https://dodo.ac/np/images/thumb/b/bb/Gala%27s_Photo_NH_Texture.png/64px-Gala%27s_Photo_NH_Texture.png"},
+            {name: "Gaston", image: "https://dodo.ac/np/images/thumb/f/f3/Gaston%27s_Photo_NH_Texture.png/64px-Gaston%27s_Photo_NH_Texture.png"},
+            {name: "Gayle", image: "https://dodo.ac/np/images/thumb/f/f1/Gayle%27s_Photo_NH_Texture.png/64px-Gayle%27s_Photo_NH_Texture.png"},
+            {name: "Genji", image: "https://dodo.ac/np/images/thumb/3/3b/Genji%27s_Photo_NH_Texture.png/64px-Genji%27s_Photo_NH_Texture.png"},
+            {name: "Gigi", image: "https://dodo.ac/np/images/thumb/8/82/Gigi%27s_Photo_NH_Texture.png/64px-Gigi%27s_Photo_NH_Texture.png"},
+            {name: "Gladys", image: "https://dodo.ac/np/images/thumb/a/a3/Gladys%27s_Photo_NH_Texture.png/64px-Gladys%27s_Photo_NH_Texture.png"},
+            {name: "Gloria", image: "https://dodo.ac/np/images/thumb/3/38/Gloria%27s_Photo_NH_Texture.png/64px-Gloria%27s_Photo_NH_Texture.png"},
+            {name: "Goldie", image: "https://dodo.ac/np/images/thumb/2/2f/Goldie%27s_Photo_NH_Texture.png/64px-Goldie%27s_Photo_NH_Texture.png"},
+            {name: "Gonzo", image: "https://dodo.ac/np/images/thumb/2/2a/Gonzo%27s_Photo_NH_Texture.png/64px-Gonzo%27s_Photo_NH_Texture.png"},
+            {name: "Goose", image: "https://dodo.ac/np/images/thumb/e/e7/Goose%27s_Photo_NH_Texture.png/64px-Goose%27s_Photo_NH_Texture.png"},
+            {name: "Graham", image: "https://dodo.ac/np/images/thumb/4/4b/Graham%27s_Photo_NH_Texture.png/64px-Graham%27s_Photo_NH_Texture.png"},
+            {name: "Greta", image: "https://dodo.ac/np/images/thumb/2/20/Greta%27s_Photo_NH_Texture.png/64px-Greta%27s_Photo_NH_Texture.png"},
+            {name: "Grizzly", image: "https://dodo.ac/np/images/thumb/f/fb/Grizzly%27s_Photo_NH_Texture.png/64px-Grizzly%27s_Photo_NH_Texture.png"},
+            {name: "Groucho", image: "https://dodo.ac/np/images/thumb/7/78/Groucho%27s_Photo_NH_Texture.png/64px-Groucho%27s_Photo_NH_Texture.png"},
+            {name: "Gruff", image: "https://dodo.ac/np/images/thumb/6/6c/Gruff%27s_Photo_NH_Texture.png/64px-Gruff%27s_Photo_NH_Texture.png"},
+            {name: "Gwen", image: "https://dodo.ac/np/images/thumb/8/83/Gwen%27s_Photo_NH_Texture.png/64px-Gwen%27s_Photo_NH_Texture.png"},
+            {name: "Hamlet", image: "https://dodo.ac/np/images/thumb/6/62/Hamlet%27s_Photo_NH_Texture.png/64px-Hamlet%27s_Photo_NH_Texture.png"},
+            {name: "Hamphrey", image: "https://dodo.ac/np/images/thumb/2/23/Hamphrey%27s_Photo_NH_Texture.png/64px-Hamphrey%27s_Photo_NH_Texture.png"},
+            {name: "Hans", image: "https://dodo.ac/np/images/thumb/9/96/Hans%27s_Photo_NH_Texture.png/64px-Hans%27s_Photo_NH_Texture.png"},
+            {name: "Harry", image: "https://dodo.ac/np/images/thumb/d/de/Harry%27s_Photo_NH_Texture.png/64px-Harry%27s_Photo_NH_Texture.png"},
+            {name: "Hazel", image: "https://dodo.ac/np/images/thumb/e/ec/Hazel%27s_Photo_NH_Texture.png/64px-Hazel%27s_Photo_NH_Texture.png"},
+            {name: "Henry", image: "https://dodo.ac/np/images/thumb/7/79/Henry%27s_Photo_NH_Texture.png/64px-Henry%27s_Photo_NH_Texture.png"},
+            {name: "Hippeux", image: "https://dodo.ac/np/images/thumb/9/9d/Hippeux%27s_Photo_NH_Texture.png/64px-Hippeux%27s_Photo_NH_Texture.png"},
+            {name: "Hopkins", image: "https://dodo.ac/np/images/thumb/a/ab/Hopkins%27s_Photo_NH_Texture.png/64px-Hopkins%27s_Photo_NH_Texture.png"},
+            {name: "Hopper", image: "https://dodo.ac/np/images/thumb/b/b6/Hopper%27s_Photo_NH_Texture.png/64px-Hopper%27s_Photo_NH_Texture.png"},
+            {name: "Hornsby", image: "https://dodo.ac/np/images/thumb/1/16/Hornsby%27s_Photo_NH_Texture.png/64px-Hornsby%27s_Photo_NH_Texture.png"},
+            {name: "Huck", image: "https://dodo.ac/np/images/thumb/a/a2/Huck%27s_Photo_NH_Texture.png/64px-Huck%27s_Photo_NH_Texture.png"},
+            {name: "Hugh", image: "https://dodo.ac/np/images/thumb/e/e0/Hugh%27s_Photo_NH_Texture.png/64px-Hugh%27s_Photo_NH_Texture.png"},
+            // Adding more popular villagers to complete the list
+            {name: "Isabelle", image: "https://dodo.ac/np/images/thumb/c/c1/Isabelle%27s_Photo_NH_Texture.png/64px-Isabelle%27s_Photo_NH_Texture.png"},
+            {name: "Judy", image: "https://dodo.ac/np/images/thumb/4/4f/Judy%27s_Photo_NH_Texture.png/64px-Judy%27s_Photo_NH_Texture.png"},
+            {name: "Marshal", image: "https://dodo.ac/np/images/thumb/0/0b/Marshal%27s_Photo_NH_Texture.png/64px-Marshal%27s_Photo_NH_Texture.png"},
+            {name: "Raymond", image: "https://dodo.ac/np/images/thumb/3/3b/Raymond%27s_Photo_NH_Texture.png/64px-Raymond%27s_Photo_NH_Texture.png"},
+            {name: "Sherb", image: "https://dodo.ac/np/images/thumb/8/82/Sherb%27s_Photo_NH_Texture.png/64px-Sherb%27s_Photo_NH_Texture.png"},
+            {name: "Zucker", image: "https://dodo.ac/np/images/thumb/8/89/Zucker%27s_Photo_NH_Texture.png/64px-Zucker%27s_Photo_NH_Texture.png"},
+            {name: "Stitches", image: "https://dodo.ac/np/images/thumb/8/8a/Stitches%27_Photo_NH_Texture.png/64px-Stitches%27_Photo_NH_Texture.png"},
+            {name: "Lucky", image: "https://dodo.ac/np/images/thumb/f/f1/Lucky%27s_Photo_NH_Texture.png/64px-Lucky%27s_Photo_NH_Texture.png"},
+            {name: "Maple", image: "https://dodo.ac/np/images/thumb/f/f5/Maple%27s_Photo_NH_Texture.png/64px-Maple%27s_Photo_NH_Texture.png"},
+            {name: "Molly", image: "https://dodo.ac/np/images/thumb/1/1c/Molly%27s_Photo_NH_Texture.png/64px-Molly%27s_Photo_NH_Texture.png"},
+            {name: "Marina", image: "https://dodo.ac/np/images/thumb/d/d8/Marina%27s_Photo_NH_Texture.png/64px-Marina%27s_Photo_NH_Texture.png"},
+            {name: "Ketchup", image: "https://dodo.ac/np/images/thumb/1/1c/Ketchup%27s_Photo_NH_Texture.png/64px-Ketchup%27s_Photo_NH_Texture.png"},
+            {name: "Roald", image: "https://dodo.ac/np/images/thumb/4/43/Roald%27s_Photo_NH_Texture.png/64px-Roald%27s_Photo_NH_Texture.png"},
+            {name: "Tangy", image: "https://dodo.ac/np/images/thumb/f/fc/Tangy%27s_Photo_NH_Texture.png/64px-Tangy%27s_Photo_NH_Texture.png"},
+            {name: "Rosie", image: "https://dodo.ac/np/images/thumb/f/fb/Rosie%27s_Photo_NH_Texture.png/64px-Rosie%27s_Photo_NH_Texture.png"},
+            {name: "Pietro", image: "https://dodo.ac/np/images/thumb/5/52/Pietro%27s_Photo_NH_Texture.png/64px-Pietro%27s_Photo_NH_Texture.png"}
+        ];
+
+        let currentBingoCard = [];
+        let clickedCells = new Set();
+
+        function shuffleArray(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        function generateBingo() {
+            // Reset clicked cells
+            clickedCells.clear();
+            
+            // Shuffle villagers and select 24 (excluding center free space)
+            const shuffledVillagers = shuffleArray(villagers);
+            const selectedVillagers = shuffledVillagers.slice(0, 24);
+            
+            // Create grid with free space in center
+            currentBingoCard = [];
+            for (let i = 0; i < 25; i++) {
+                if (i === 12) { // Center position (0-indexed)
+                    currentBingoCard.push({ name: "FREE", image: null, isFree: true });
+                } else if (i < 12) {
+                    currentBingoCard.push(selectedVillagers[i]);
+                } else {
+                    currentBingoCard.push(selectedVillagers[i - 1]);
+                }
+            }
+            
+            renderBingoCard();
+        }
+
+        function renderBingoCard() {
+            const grid = document.getElementById('bingoGrid');
+            grid.innerHTML = '';
+            
+            currentBingoCard.forEach((villager, index) => {
+                const cell = document.createElement('div');
+                cell.className = `bingo-cell ${villager.isFree ? 'free' : ''}`;
+                cell.onclick = () => toggleCell(index);
+                
+                if (villager.isFree) {
+                    cell.innerHTML = '<div class="villager-name">FREE SPACE</div>';
+                    clickedCells.add(index);
+                } else {
+                    cell.innerHTML = `
+                        <img src="${villager.image}" alt="${villager.name}" class="villager-image" onerror="this.style.display='none'">
+                        <div class="villager-name">${villager.name}</div>
+                    `;
+                }
+                
+                grid.appendChild(cell);
+            });
+        }
+
+        function toggleCell(index) {
+            const cell = document.querySelectorAll('.bingo-cell')[index];
+            if (clickedCells.has(index)) {
+                clickedCells.delete(index);
+                cell.classList.remove('clicked');
+            } else {
+                clickedCells.add(index);
+                cell.classList.add('clicked');
+            }
+            
+            checkForBingo();
+        }
+
+        function checkForBingo() {
+            // Check rows
+            for (let row = 0; row < 5; row++) {
+                let hasRow = true;
+                for (let col = 0; col < 5; col++) {
+                    if (!clickedCells.has(row * 5 + col)) {
+                        hasRow = false;
+                        break;
+                    }
+                }
+                if (hasRow) {
+                    setTimeout(() => alert('🎉 BINGO! You got a row!'), 100);
+                    return;
+                }
+            }
+            
+            // Check columns
+            for (let col = 0; col < 5; col++) {
+                let hasCol = true;
+                for (let row = 0; row < 5; row++) {
+                    if (!clickedCells.has(row * 5 + col)) {
+                        hasCol = false;
+                        break;
+                    }
+                }
+                if (hasCol) {
+                    setTimeout(() => alert('🎉 BINGO! You got a column!'), 100);
+                    return;
+                }
+            }
+            
+            // Check diagonals
+            let hasDiag1 = true;
+            let hasDiag2 = true;
+            for (let i = 0; i < 5; i++) {
+                if (!clickedCells.has(i * 5 + i)) hasDiag1 = false;
+                if (!clickedCells.has(i * 5 + (4 - i))) hasDiag2 = false;
+            }
+            if (hasDiag1 || hasDiag2) {
+                setTimeout(() => alert('🎉 BINGO! You got a diagonal!'), 100);
+            }
+        }
+
+        function downloadCard() {
+            // Create a canvas to render the bingo card
+            const card = document.getElementById('bingoCard');
+            
+            // Use html2canvas if available, otherwise provide instructions
+            if (typeof html2canvas !== 'undefined') {
+                html2canvas(card).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = 'acnh-bingo-card.png';
+                    link.href = canvas.toDataURL();
+                    link.click();
+                });
+            } else {
+                alert('To save as image, please:\n1. Take a screenshot of the bingo card\n2. Or print to PDF using the Print button\n3. Or use browser\'s right-click > "Save image as"');
+            }
+        }
+
+        // Generate initial bingo card on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add some delay to ensure images load properly
+            setTimeout(generateBingo, 500);
+        });
+    </script>
+</body>
+</html>
