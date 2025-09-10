@@ -1,0 +1,1310 @@
+[
+  {
+    "name": "Iggly",
+    "species": "Penguin",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/1/19/Iggly_NH.png/200px-Iggly_NH.png"
+  },
+  {
+    "name": "Ike",
+    "species": "Bear",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/9/9f/Ike_NH.png/200px-Ike_NH.png"
+  },
+  {
+    "name": "Ione",
+    "species": "Squirrel",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/1/1b/Ione_NH.png/200px-Ione_NH.png"
+  },
+  {
+    "name": "Jac",
+    "species": "Bird",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/6/6f/Jac_NH.png/200px-Jac_NH.png"
+  },
+  {
+    "name": "Jack",
+    "species": "Dog",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/6/6e/Jack_NH.png/200px-Jack_NH.png"
+  },
+  {
+    "name": "Jacob",
+    "species": "Bird",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/5/52/Jacob_NH.png/200px-Jacob_NH.png"
+  },
+  {
+    "name": "Jacques",
+    "species": "Bird",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/6/6a/Jacques_NH.png/200px-Jacques_NH.png"
+  },
+  {
+    "name": "Jambette",
+    "species": "Frog",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/3/3b/Jambette_NH.png/200px-Jambette_NH.png"
+  },
+  {
+    "name": "Jay",
+    "species": "Bird",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/4/49/Jay_NH.png/200px-Jay_NH.png"
+  },
+  {
+    "name": "Jeremiah",
+    "species": "Frog",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/6/69/Jeremiah_NH.png/200px-Jeremiah_NH.png"
+  },
+  {
+    "name": "Jitters",
+    "species": "Bird",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/e/e7/Jitters_NH.png/200px-Jitters_NH.png"
+  },
+  {
+    "name": "Joey",
+    "species": "Duck",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/6/64/Joey_NH.png/200px-Joey_NH.png"
+  },
+  {
+    "name": "Judy",
+    "species": "Cub",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/4/42/Judy_NH.png/200px-Judy_NH.png"
+  },
+  {
+    "name": "Julia",
+    "species": "Ostrich",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/5/50/Julia_NH.png/200px-Julia_NH.png"
+  },
+  {
+    "name": "Julian",
+    "species": "Horse",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/0/0e/Julian_NH.png/200px-Julian_NH.png"
+  },
+  {
+    "name": "June",
+    "species": "Cub",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/1/1f/June_NH.png/200px-June_NH.png"
+  },
+  {
+    "name": "Kabuki",
+    "species": "Cat",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/1/17/Kabuki_NH.png/200px-Kabuki_NH.png"
+  },
+  {
+    "name": "Katt",
+    "species": "Cat",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/f/f2/Katt_NH.png/200px-Katt_NH.png"
+  },
+  {
+    "name": "Keaton",
+    "species": "Eagle",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/8/82/Keaton_NH.png/200px-Keaton_NH.png"
+  },
+  {
+    "name": "Ken",
+    "species": "Chicken",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/0/04/Ken_NH.png/200px-Ken_NH.png"
+  },
+  {
+    "name": "Ketchup",
+    "species": "Duck",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/6/6f/Ketchup_NH.png/200px-Ketchup_NH.png"
+  },
+  {
+    "name": "Kevin",
+    "species": "Pig",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/0/07/Kevin_NH.png/200px-Kevin_NH.png"
+  },
+  {
+    "name": "Kid Cat",
+    "species": "Cat",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/3/33/Kid_Cat_NH.png/200px-Kid_Cat_NH.png"
+  },
+  {
+    "name": "Kidd",
+    "species": "Goat",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/4/4a/Kidd_NH.png/200px-Kidd_NH.png"
+  },
+  {
+    "name": "Kiki",
+    "species": "Cat",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/4/48/Kiki_NH.png/200px-Kiki_NH.png"
+  },
+  {
+    "name": "King",
+    "species": "Gorilla",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/c/c1/King_NH.png/200px-King_NH.png"
+  },
+  {
+    "name": "Kit",
+    "species": "Squirrel",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/8/8b/Kit_NH.png/200px-Kit_NH.png"
+  },
+  {
+    "name": "Kitty",
+    "species": "Cat",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/7/7c/Kitty_NH.png/200px-Kitty_NH.png"
+  },
+  {
+    "name": "Klaus",
+    "species": "Bear",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/b/b6/Klaus_NH.png/200px-Klaus_NH.png"
+  },
+  {
+    "name": "Knox",
+    "species": "Chicken",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/5/52/Knox_NH.png/200px-Knox_NH.png"
+  },
+  {
+    "name": "Kody",
+    "species": "Cub",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/0/02/Kody_NH.png/200px-Kody_NH.png"
+  },
+  {
+    "name": "Lolly",
+    "species": "Cat",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/4/4e/Lolly_NH.png/200px-Lolly_NH.png"
+  },
+  {
+    "name": "Lopez",
+    "species": "Deer",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/4/4d/Lopez_NH.png/200px-Lopez_NH.png"
+  },
+  {
+    "name": "Louie",
+    "species": "Gorilla",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/4/40/Louie_NH.png/200px-Louie_NH.png"
+  },
+  {
+    "name": "Lucha",
+    "species": "Bird",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/9/9d/Lucha_NH.png/200px-Lucha_NH.png"
+  },
+  {
+    "name": "Lucky",
+    "species": "Dog",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/8/82/Lucky_NH.png/200px-Lucky_NH.png"
+  },
+  {
+    "name": "Lucy",
+    "species": "Pig",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/1/19/Lucy_NH.png/200px-Lucy_NH.png"
+  },
+  {
+    "name": "Lyman",
+    "species": "Koala",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/f3/Lyman_NH.png/200px-Lyman_NH.png"
+  },
+  {
+    "name": "Mac",
+    "species": "Dog",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/8/89/Mac_NH.png/200px-Mac_NH.png"
+  },
+  {
+    "name": "Maddie",
+    "species": "Dog",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/2/24/Maddie_NH.png/200px-Maddie_NH.png"
+  },
+  {
+    "name": "Maelle",
+    "species": "Duck",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/6/6e/Maelle_NH.png/200px-Maelle_NH.png"
+  },
+  {
+    "name": "Maggie",
+    "species": "Pig",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/b/b8/Maggie_NH.png/200px-Maggie_NH.png"
+  },
+  {
+    "name": "Mallary",
+    "species": "Duck",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/0/0b/Mallary_NH.png/200px-Mallary_NH.png"
+  },
+  {
+    "name": "Maple",
+    "species": "Cub",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/6/66/Maple_NH.png/200px-Maple_NH.png"
+  },
+  {
+    "name": "Marcel",
+    "species": "Dog",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/8/8a/Marcel_NH.png/200px-Marcel_NH.png"
+  },
+  {
+    "name": "Marcie",
+    "species": "Kangaroo",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/c/c8/Marcie_NH.png/200px-Marcie_NH.png"
+  },
+  {
+    "name": "Margie",
+    "species": "Elephant",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/4/4a/Margie_NH.png/200px-Margie_NH.png"
+  },
+  {
+    "name": "Marina",
+    "species": "Octopus",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/d/d8/Marina_NH.png/200px-Marina_NH.png"
+  },
+  {
+    "name": "Marshal",
+    "species": "Squirrel",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/0/0b/Marshal_NH.png/200px-Marshal_NH.png"
+  },
+  {
+    "name": "Marty",
+    "species": "Cub",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Marty_NH.png/200px-Marty_NH.png"
+  },
+  {
+    "name": "Mathilda",
+    "species": "Kangaroo",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/8/8f/Mathilda_NH.png/200px-Mathilda_NH.png"
+  },
+  {
+    "name": "Maya",
+    "species": "Cub",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/9/9a/Maya_NH.png/200px-Maya_NH.png"
+  },
+  {
+    "name": "McKenzie",
+    "species": "Wolf",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/5/50/McKenzie_NH.png/200px-McKenzie_NH.png"
+  },
+  {
+    "name": "Meaghan",
+    "species": "Cub",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/3/3a/Meaghan_NH.png/200px-Meaghan_NH.png"
+  },
+  {
+    "name": "Melba",
+    "species": "Koala",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/e/ea/Melba_NH.png/200px-Melba_NH.png"
+  },
+  {
+    "name": "Merengue",
+    "species": "Rhino",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/2/29/Merengue_NH.png/200px-Merengue_NH.png"
+  },
+  {
+    "name": "Merry",
+    "species": "Cat",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/1/1c/Merry_NH.png/200px-Merry_NH.png"
+  },
+  {
+    "name": "Midge",
+    "species": "Bird",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/b/b8/Midge_NH.png/200px-Midge_NH.png"
+  },
+  {
+    "name": "Mint",
+    "species": "Squirrel",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/5/5e/Mint_NH.png/200px-Mint_NH.png"
+  },
+  {
+    "name": "Mira",
+    "species": "Rabbit",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Mira_NH.png/200px-Mira_NH.png"
+  },
+  {
+    "name": "Miranda",
+    "species": "Duck",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/7/79/Miranda_NH.png/200px-Miranda_NH.png"
+  },
+  {
+    "name": "Mitzi",
+    "species": "Cat",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/4/49/Mitzi_NH.png/200px-Mitzi_NH.png"
+  },
+  {
+    "name": "Moe",
+    "species": "Cat",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/d/d1/Moe_NH.png/200px-Moe_NH.png"
+  },
+  {
+    "name": "Molly",
+    "species": "Duck",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/4/4f/Molly_NH.png/200px-Molly_NH.png"
+  },
+  {
+    "name": "Monique",
+    "species": "Cat",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/3/3f/Monique_NH.png/200px-Monique_NH.png"
+  },
+  {
+    "name": "Monty",
+    "species": "Monkey",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/d/d8/Monty_NH.png/200px-Monty_NH.png"
+  },
+  {
+    "name": "Moose",
+    "species": "Mouse",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/6/6b/Moose_NH.png/200px-Moose_NH.png"
+  },
+  {
+    "name": "Mott",
+    "species": "Lion",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/e/ed/Mott_NH.png/200px-Mott_NH.png"
+  },
+  {
+    "name": "Muffy",
+    "species": "Sheep",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/4/4e/Muffy_NH.png/200px-Muffy_NH.png"
+  },
+  {
+    "name": "Murphy",
+    "species": "Cub",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/0/05/Murphy_NH.png/200px-Murphy_NH.png"
+  },
+  {
+    "name": "Nan",
+    "species": "Goat",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/9/9e/Nan_NH.png/200px-Nan_NH.png"
+  },
+  {
+    "name": "Nana",
+    "species": "Monkey",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/f/f1/Nana_NH.png/200px-Nana_NH.png"
+  },
+  {
+    "name": "Naomi",
+    "species": "Cow",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/c/c1/Naomi_NH.png/200px-Naomi_NH.png"
+  },
+  {
+    "name": "Nate",
+    "species": "Bear",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/9/9f/Nate_NH.png/200px-Nate_NH.png"
+  },
+  {
+    "name": "Nibbles",
+    "species": "Squirrel",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/f/f8/Nibbles_NH.png/200px-Nibbles_NH.png"
+  },
+  {
+    "name": "Norma",
+    "species": "Cow",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/a/a2/Norma_NH.png/200px-Norma_NH.png"
+  },
+  {
+    "name": "O'Hare",
+    "species": "Rabbit",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/e/e7/O%27Hare_NH.png/200px-O%27Hare_NH.png"
+  },
+  {
+    "name": "Octavian",
+    "species": "Octopus",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/b/b5/Octavian_NH.png/200px-Octavian_NH.png"
+  },
+  {
+    "name": "Olaf",
+    "species": "Anteater",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/f/fd/Olaf_NH.png/200px-Olaf_NH.png"
+  },
+  {
+    "name": "Olive",
+    "species": "Cub",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/a/ab/Olive_NH.png/200px-Olive_NH.png"
+  },
+  {
+    "name": "Olivia",
+    "species": "Cat",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/6/66/Olivia_NH.png/200px-Olivia_NH.png"
+  },
+  {
+    "name": "Opal",
+    "species": "Elephant",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/8/8f/Opal_NH.png/200px-Opal_NH.png"
+  },
+  {
+    "name": "Ozzie",
+    "species": "Koala",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/4/44/Ozzie_NH.png/200px-Ozzie_NH.png"
+  },
+  {
+    "name": "Pancetti",
+    "species": "Pig",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/b/bc/Pancetti_NH.png/200px-Pancetti_NH.png"
+  },
+  {
+    "name": "Pango",
+    "species": "Anteater",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/d/d1/Pango_NH.png/200px-Pango_NH.png"
+  },
+  {
+    "name": "Paolo",
+    "species": "Elephant",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/a/a9/Paolo_NH.png/200px-Paolo_NH.png"
+  },
+  {
+    "name": "Papi",
+    "species": "Horse",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/f/f3/Papi_NH.png/200px-Papi_NH.png"
+  },
+  {
+    "name": "Pashmina",
+    "species": "Goat",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/4/4b/Pashmina_NH.png/200px-Pashmina_NH.png"
+  },
+  {
+    "name": "Pate",
+    "species": "Duck",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/8/88/Pate_NH.png/200px-Pate_NH.png"
+  },
+  {
+    "name": "Patricia",
+    "species": "Cow",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/a/a8/Patricia_NH.png/200px-Patricia_NH.png"
+  },
+  {
+    "name": "Patty",
+    "species": "Cow",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Patty_NH.png/200px-Patty_NH.png"
+  },
+  {
+    "name": "Paula",
+    "species": "Bear",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/1/1b/Paula_NH.png/200px-Paula_NH.png"
+  },
+  {
+    "name": "Peaches",
+    "species": "Horse",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/6/6a/Peaches_NH.png/200px-Peaches_NH.png"
+  },
+  {
+    "name": "Peanut",
+    "species": "Squirrel",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/b/be/Peanut_NH.png/200px-Peanut_NH.png"
+  },
+  {
+    "name": "Pecan",
+    "species": "Squirrel",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/f/fa/Pecan_NH.png/200px-Pecan_NH.png"
+  },
+  {
+    "name": "Peck",
+    "species": "Bird",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/9/9f/Peck_NH.png/200px-Peck_NH.png"
+  },
+  {
+    "name": "Peewee",
+    "species": "Gorilla",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/f/fc/Peewee_NH.png/200px-Peewee_NH.png"
+  },
+  {
+    "name": "Peggy",
+    "species": "Pig",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/4/4b/Peggy_NH.png/200px-Peggy_NH.png"
+  },
+  {
+    "name": "Pekoe",
+    "species": "Cub",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/6/6f/Pekoe_NH.png/200px-Pekoe_NH.png"
+  },
+  {
+    "name": "Penelope",
+    "species": "Mouse",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/8/8f/Penelope_NH.png/200px-Penelope_NH.png"
+  },
+  {
+    "name": "Petunia",
+    "species": "Cow",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/c/cd/Petunia_NH.png/200px-Petunia_NH.png"
+  },
+  {
+    "name": "Phil",
+    "species": "Ostrich",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/f/ff/Phil_NH.png/200px-Phil_NH.png"
+  },
+  {
+    "name": "Phoebe",
+    "species": "Ostrich",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/7/7a/Phoebe_NH.png/200px-Phoebe_NH.png"
+  },
+  {
+    "name": "Pierce",
+    "species": "Eagle",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/4/46/Pierce_NH.png/200px-Pierce_NH.png"
+  },
+  {
+    "name": "Pietro",
+    "species": "Sheep",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/4/4b/Pietro_NH.png/200px-Pietro_NH.png"
+  },
+  {
+    "name": "Pinky",
+    "species": "Bear",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/2/2c/Pinky_NH.png/200px-Pinky_NH.png"
+  },
+  {
+    "name": "Piper",
+    "species": "Bird",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/f/f1/Piper_NH.png/200px-Piper_NH.png"
+  },
+  {
+    "name": "Pippy",
+    "species": "Rabbit",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/0/0e/Pippy_NH.png/200px-Pippy_NH.png"
+  },
+  {
+    "name": "Plucky",
+    "species": "Chicken",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/9/9b/Plucky_NH.png/200px-Plucky_NH.png"
+  },
+  {
+    "name": "Pompom",
+    "species": "Duck",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/3/30/Pompom_NH.png/200px-Pompom_NH.png"
+  },
+  {
+    "name": "Poncho",
+    "species": "Cub",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/f8/Poncho_NH.png/200px-Poncho_NH.png"
+  },
+  {
+    "name": "Poppy",
+    "species": "Squirrel",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/c/c8/Poppy_NH.png/200px-Poppy_NH.png"
+  },
+  {
+    "name": "Portia",
+    "species": "Dog",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/4/47/Portia_NH.png/200px-Portia_NH.png"
+  },
+  {
+    "name": "Prince",
+    "species": "Frog",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/c/c0/Prince_NH.png/200px-Prince_NH.png"
+  },
+  {
+    "name": "Puck",
+    "species": "Penguin",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/e/ee/Puck_NH.png/200px-Puck_NH.png"
+  },
+  {
+    "name": "Puddles",
+    "species": "Frog",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/f/f4/Puddles_NH.png/200px-Puddles_NH.png"
+  },
+  {
+    "name": "Pudge",
+    "species": "Cub",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/4/4f/Pudge_NH.png/200px-Pudge_NH.png"
+  },
+  {
+    "name": "Punchy",
+    "species": "Cat",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/1/14/Punchy_NH.png/200px-Punchy_NH.png"
+  },
+  {
+    "name": "Purrl",
+    "species": "Cat",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/4/4f/Purrl_NH.png/200px-Purrl_NH.png"
+  },
+  {
+    "name": "Quetzal",
+    "species": "Eagle",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/8/8b/Quetzal_NH.png/200px-Quetzal_NH.png"
+  },
+  {
+    "name": "Quillson",
+    "species": "Duck",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/8/8a/Quillson_NH.png/200px-Quillson_NH.png"
+  },
+  {
+    "name": "Raddle",
+    "species": "Frog",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/b/ba/Raddle_NH.png/200px-Raddle_NH.png"
+  },
+  {
+    "name": "Rasher",
+    "species": "Pig",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/c/c9/Rasher_NH.png/200px-Rasher_NH.png"
+  },
+  {
+    "name": "Raymond",
+    "species": "Cat",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/3/3a/Raymond_NH.png/200px-Raymond_NH.png"
+  },
+  {
+    "name": "Renée",
+    "species": "Rhino",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/d/d1/Ren%C3%A9e_NH.png/200px-Ren%C3%A9e_NH.png"
+  },
+  {
+    "name": "Rex",
+    "species": "Lion",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/f/f3/Rex_NH.png/200px-Rex_NH.png"
+  },
+  {
+    "name": "Rhonda",
+    "species": "Rhino",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/4/4b/Rhonda_NH.png/200px-Rhonda_NH.png"
+  },
+  {
+    "name": "Ribbot",
+    "species": "Frog",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Ribbot_NH.png/200px-Ribbot_NH.png"
+  },
+  {
+    "name": "Ricky",
+    "species": "Squirrel",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/a/ad/Ricky_NH.png/200px-Ricky_NH.png"
+  },
+  {
+    "name": "Rizzo",
+    "species": "Mouse",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/7/7a/Rizzo_NH.png/200px-Rizzo_NH.png"
+  },
+  {
+    "name": "Roald",
+    "species": "Penguin",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/4/43/Roald_NH.png/200px-Roald_NH.png"
+  },
+  {
+    "name": "Robin",
+    "species": "Bird",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/f/f5/Robin_NH.png/200px-Robin_NH.png"
+  },
+  {
+    "name": "Rocco",
+    "species": "Hippo",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/f/fe/Rocco_NH.png/200px-Rocco_NH.png"
+  },
+  {
+    "name": "Rocket",
+    "species": "Gorilla",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/9/9b/Rocket_NH.png/200px-Rocket_NH.png"
+  },
+  {
+    "name": "Rod",
+    "species": "Mouse",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/c/c2/Rod_NH.png/200px-Rod_NH.png"
+  },
+  {
+    "name": "Rodeo",
+    "species": "Bull",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/f/f1/Rodeo_NH.png/200px-Rodeo_NH.png"
+  },
+  {
+    "name": "Rodney",
+    "species": "Hamster",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/4/43/Rodney_NH.png/200px-Rodney_NH.png"
+  },
+  {
+    "name": "Rolf",
+    "species": "Tiger",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/6/6f/Rolf_NH.png/200px-Rolf_NH.png"
+  },
+  {
+    "name": "Rooney",
+    "species": "Kangaroo",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/f/f6/Rooney_NH.png/200px-Rooney_NH.png"
+  },
+  {
+    "name": "Rory",
+    "species": "Lion",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/4/40/Rory_NH.png/200px-Rory_NH.png"
+  },
+  {
+    "name": "Roscoe",
+    "species": "Horse",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Roscoe_NH.png/200px-Roscoe_NH.png"
+  },
+  {
+    "name": "Rosie",
+    "species": "Cat",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/0/05/Rosie_NH.png/200px-Rosie_NH.png"
+  },
+  {
+    "name": "Rowan",
+    "species": "Tiger",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/f2/Rowan_NH.png/200px-Rowan_NH.png"
+  },
+  {
+    "name": "Ruby",
+    "species": "Rabbit",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Ruby_NH.png/200px-Ruby_NH.png"
+  },
+  {
+    "name": "Rudy",
+    "species": "Cat",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/6/63/Rudy_NH.png/200px-Rudy_NH.png"
+  },
+  {
+    "name": "Sally",
+    "species": "Squirrel",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/8/8a/Sally_NH.png/200px-Sally_NH.png"
+  },
+  {
+    "name": "Samson",
+    "species": "Mouse",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/f1/Samson_NH.png/200px-Samson_NH.png"
+  },
+  {
+    "name": "Sandy",
+    "species": "Ostrich",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/a/a7/Sandy_NH.png/200px-Sandy_NH.png"
+  },
+  {
+    "name": "Savannah",
+    "species": "Horse",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/a/a7/Savannah_NH.png/200px-Savannah_NH.png"
+  },
+  {
+    "name": "Scoot",
+    "species": "Duck",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/f1/Scoot_NH.png/200px-Scoot_NH.png"
+  },
+  {
+    "name": "Shari",
+    "species": "Monkey",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/1/1f/Shari_NH.png/200px-Shari_NH.png"
+  },
+  {
+    "name": "Sheldon",
+    "species": "Squirrel",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/4/4f/Sheldon_NH.png/200px-Sheldon_NH.png"
+  },
+  {
+    "name": "Shep",
+    "species": "Dog",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/f/f4/Shep_NH.png/200px-Shep_NH.png"
+  },
+  {
+    "name": "Sheriff",
+    "species": "Dog",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/c/c7/Sheriff_NH.png/200px-Sheriff_NH.png"
+  },
+  {
+    "name": "Sherb",
+    "species": "Goat",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/2/29/Sherb_NH.png/200px-Sherb_NH.png"
+  },
+  {
+    "name": "Simon",
+    "species": "Monkey",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/4/4f/Simon_NH.png/200px-Simon_NH.png"
+  },
+  {
+    "name": "Skye",
+    "species": "Wolf",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/8/8a/Skye_NH.png/200px-Skye_NH.png"
+  },
+  {
+    "name": "Sly",
+    "species": "Alligator",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/f8/Sly_NH.png/200px-Sly_NH.png"
+  },
+  {
+    "name": "Snake",
+    "species": "Rabbit",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Snake_NH.png/200px-Snake_NH.png"
+  },
+  {
+    "name": "Snooty",
+    "species": "Anteater",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Snooty_NH.png/200px-Snooty_NH.png"
+  },
+  {
+    "name": "Soleil",
+    "species": "Hamster",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/4/47/Soleil_NH.png/200px-Soleil_NH.png"
+  },
+  {
+    "name": "Sparro",
+    "species": "Bird",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/ff/Sparro_NH.png/200px-Sparro_NH.png"
+  },
+  {
+    "name": "Spike",
+    "species": "Rhino",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Spike_NH.png/200px-Spike_NH.png"
+  },
+  {
+    "name": "Sprinkle",
+    "species": "Penguin",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Sprinkle_NH.png/200px-Sprinkle_NH.png"
+  },
+  {
+    "name": "Sprocket",
+    "species": "Ostrich",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/4/43/Sprocket_NH.png/200px-Sprocket_NH.png"
+  },
+  {
+    "name": "Static",
+    "species": "Squirrel",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Static_NH.png/200px-Static_NH.png"
+  },
+  {
+    "name": "Stella",
+    "species": "Sheep",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Stella_NH.png/200px-Stella_NH.png"
+  },
+  {
+    "name": "Sterling",
+    "species": "Eagle",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/f3/Sterling_NH.png/200px-Sterling_NH.png"
+  },
+  {
+    "name": "Stinky",
+    "species": "Cat",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/4/4f/Stinky_NH.png/200px-Stinky_NH.png"
+  },
+  {
+    "name": "Stitches",
+    "species": "Cub",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Stitches_NH.png/200px-Stitches_NH.png"
+  },
+  {
+    "name": "Stuart",
+    "species": "Mouse",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Stuart_NH.png/200px-Stuart_NH.png"
+  },
+  {
+    "name": "Suck",
+    "species": "Pig",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Sue_E._NH.png/200px-Sue_E._NH.png"
+  },
+  {
+    "name": "Sydney",
+    "species": "Koala",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Sydney_NH.png/200px-Sydney_NH.png"
+  },
+  {
+    "name": "Sylvia",
+    "species": "Kangaroo",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Sylvia_NH.png/200px-Sylvia_NH.png"
+  },
+  {
+    "name": "Tabby",
+    "species": "Cat",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Tabby_NH.png/200px-Tabby_NH.png"
+  },
+  {
+    "name": "Tad",
+    "species": "Frog",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Tad_NH.png/200px-Tad_NH.png"
+  },
+  {
+    "name": "Tammi",
+    "species": "Monkey",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Tammi_NH.png/200px-Tammi_NH.png"
+  },
+  {
+    "name": "Tammy",
+    "species": "Cub",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Tammy_NH.png/200px-Tammy_NH.png"
+  },
+  {
+    "name": "Tangy",
+    "species": "Cat",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Tangy_NH.png/200px-Tangy_NH.png"
+  },
+  {
+    "name": "Tank",
+    "species": "Rhino",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Tank_NH.png/200px-Tank_NH.png"
+  },
+  {
+    "name": "Tasha",
+    "species": "Squirrel",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Tasha_NH.png/200px-Tasha_NH.png"
+  },
+  {
+    "name": "T-Bone",
+    "species": "Bull",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/T-Bone_NH.png/200px-T-Bone_NH.png"
+  },
+  {
+    "name": "Teddy",
+    "species": "Bear",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Teddy_NH.png/200px-Teddy_NH.png"
+  },
+  {
+    "name": "Tex",
+    "species": "Penguin",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Tex_NH.png/200px-Tex_NH.png"
+  },
+  {
+    "name": "Tia",
+    "species": "Elephant",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Tia_NH.png/200px-Tia_NH.png"
+  },
+  {
+    "name": "Tiffany",
+    "species": "Rabbit",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Tiffany_NH.png/200px-Tiffany_NH.png"
+  },
+  {
+    "name": "Timbra",
+    "species": "Sheep",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Timbra_NH.png/200px-Timbra_NH.png"
+  },
+  {
+    "name": "Tipper",
+    "species": "Cow",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Tipper_NH.png/200px-Tipper_NH.png"
+  },
+  {
+    "name": "Tom",
+    "species": "Cat",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Tom_NH.png/200px-Tom_NH.png"
+  },
+  {
+    "name": "Truffles",
+    "species": "Pig",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Truffles_NH.png/200px-Truffles_NH.png"
+  },
+  {
+    "name": "Tucker",
+    "species": "Elephant",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Tucker_NH.png/200px-Tucker_NH.png"
+  },
+  {
+    "name": "Tutu",
+    "species": "Bear",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Tutu_NH.png/200px-Tutu_NH.png"
+  },
+  {
+    "name": "Twiggy",
+    "species": "Bird",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Twiggy_NH.png/200px-Twiggy_NH.png"
+  },
+  {
+    "name": "Ty",
+    "species": "Koala",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Ty_NH.png/200px-Ty_NH.png"
+  },
+  {
+    "name": "Ursala",
+    "species": "Bear",
+    "personality": "Sisterly",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Ursala_NH.png/200px-Ursala_NH.png"
+  },
+  {
+    "name": "Valise",
+    "species": "Anteater",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Valise_NH.png/200px-Valise_NH.png"
+  },
+  {
+    "name": "Velma",
+    "species": "Goat",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Velma_NH.png/200px-Velma_NH.png"
+  },
+  {
+    "name": "Vesta",
+    "species": "Sheep",
+    "personality": "Normal",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Vesta_NH.png/200px-Vesta_NH.png"
+  },
+  {
+    "name": "Vic",
+    "species": "Bull",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Vic_NH.png/200px-Vic_NH.png"
+  },
+  {
+    "name": "Victoria",
+    "species": "Horse",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Victoria_NH.png/200px-Victoria_NH.png"
+  },
+  {
+    "name": "Violet",
+    "species": "Gorilla",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Violet_NH.png/200px-Violet_NH.png"
+  },
+  {
+    "name": "Vivian",
+    "species": "Wolf",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Vivian_NH.png/200px-Vivian_NH.png"
+  },
+  {
+    "name": "Vladimir",
+    "species": "Cub",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Vladimir_NH.png/200px-Vladimir_NH.png"
+  },
+  {
+    "name": "Wade",
+    "species": "Penguin",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Wade_NH.png/200px-Wade_NH.png"
+  },
+  {
+    "name": "Walker",
+    "species": "Dog",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Walker_NH.png/200px-Walker_NH.png"
+  },
+  {
+    "name": "Walt",
+    "species": "Kangaroo",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Walt_NH.png/200px-Walt_NH.png"
+  },
+  {
+    "name": "Wart Jr.",
+    "species": "Frog",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Wart_Jr._NH.png/200px-Wart_Jr._NH.png"
+  },
+  {
+    "name": "Weber",
+    "species": "Duck",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Weber_NH.png/200px-Weber_NH.png"
+  },
+  {
+    "name": "Webster",
+    "species": "Duck",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Webster_NH.png/200px-Webster_NH.png"
+  },
+  {
+    "name": "Wendy",
+    "species": "Sheep",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Wendy_NH.png/200px-Wendy_NH.png"
+  },
+  {
+    "name": "Whitney",
+    "species": "Wolf",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Whitney_NH.png/200px-Whitney_NH.png"
+  },
+  {
+    "name": "Willow",
+    "species": "Sheep",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Willow_NH.png/200px-Willow_NH.png"
+  },
+  {
+    "name": "Winnie",
+    "species": "Horse",
+    "personality": "Peppy",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Winnie_NH.png/200px-Winnie_NH.png"
+  },
+  {
+    "name": "Wolfgang",
+    "species": "Wolf",
+    "personality": "Cranky",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Wolfgang_NH.png/200px-Wolfgang_NH.png"
+  },
+  {
+    "name": "Woolio",
+    "species": "Sheep",
+    "personality": "Jock",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Woolio_NH.png/200px-Woolio_NH.png"
+  },
+  {
+    "name": "Yuka",
+    "species": "Koala",
+    "personality": "Snooty",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Yuka_NH.png/200px-Yuka_NH.png"
+  },
+  {
+    "name": "Zell",
+    "species": "Deer",
+    "personality": "Smug",
+    "image": "https://dodo.ac/np/images/thumb/4/41/Zell_NH.png/200px-Zell_NH.png"
+  },
+  {
+    "name": "Zucker",
+    "species": "Octopus",
+    "personality": "Lazy",
+    "image": "https://dodo.ac/np/images/thumb/f/f0/Zucker_NH.png/200px-Zucker_NH.png"
+  }
+]
