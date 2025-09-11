@@ -144,18 +144,17 @@
         }
 
         .bingo-cell.free {
-            background: linear-gradient(135deg, #FF9FBD, #FF7AA3);
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            border-color: #FF5E8A;
+            background: linear-gradient(135deg, #E8F5E8, #F0F8F0);
+            color: #8B4A73;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-color: #7FB069;
         }
 
         .bingo-cell.clicked {
-            background: linear-gradient(135deg, #FFE5E5, #FFF0F0);
-            border-color: #FF5E8A;
-            box-shadow: inset 0 2px 8px rgba(255, 94, 138, 0.3);
+            background: linear-gradient(135deg, #E8F5E8, #F0F8F0);
+            border-color: #7FB069;
+            box-shadow: inset 0 2px 8px rgba(127, 176, 105, 0.3);
         }
 
         .villager-image {
@@ -194,6 +193,127 @@
             color: #A55A7A;
             position: relative;
             z-index: 1;
+        }
+
+        /* Bingo celebration overlay */
+        .bingo-overlay {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-150%);
+            background: rgba(255, 159, 189, 0.95);
+            border: 3px solid #FF7AA3;
+            border-radius: 15px;
+            padding: 15px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .bingo-overlay.show {
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        .bingo-message {
+            background: linear-gradient(135deg, #FF9FBD, #FF7AA3);
+            border: 4px solid #FFB6C1;
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: scale(0.5);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bingo-overlay.show .bingo-message {
+            transform: scale(1);
+        }
+        
+        .bingo-title-big {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Fredoka', cursive;
+            animation: bounce 0.6s ease-in-out 0.3s;
+        }
+        
+        .bingo-subtitle {
+            font-size: 0.9rem;
+            color: white;
+            margin: 5px 0 0 0;
+            opacity: 0.9;
+            font-family: 'Fredoka', cursive;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .bingo-close-btn {
+            background: linear-gradient(145deg, #7FB069, #6DA055);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            color: white;
+            font-weight: 600;
+            font-family: 'Fredoka', cursive;
+            box-shadow: 0 4px 15px rgba(127, 176, 105, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .bingo-close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(127, 176, 105, 0.6);
+            background: linear-gradient(145deg, #6DA055, #5A8A47);
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #FFE135;
+            animation: confetti-fall 3s linear infinite;
+        }
+        
+        .confetti:nth-child(odd) {
+            background: #FF6B9D;
+            animation-delay: -1s;
+        }
+        
+        .confetti:nth-child(even) {
+            background: #4ECDC4;
+            animation-delay: -2s;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         @media print {
@@ -267,7 +387,7 @@
     </div>
 
     <div class="bingo-card" id="bingoCard">
-        <div class="bingo-title">VILLAGER BINGO</div>
+        <div class="bingo-title">VILLAGER HUNT BINGO</div>
         <div class="bingo-grid" id="bingoGrid">
             <div class="loading">Click "Generate New Bingo Card" to start!</div>
         </div>
@@ -718,7 +838,7 @@
             currentBingoCard = [];
             for (let i = 0; i < 25; i++) {
                 if (i === 12) { // Center position (0-indexed)
-                    currentBingoCard.push({ name: "FREE", image: "https://dodo.ac/np/images/9/93/Nook_Miles_Ticket_NH_Inv_Icon.png", isFree: true });
+                    currentBingoCard.push({ name: "FREE", image: "https://dodo.ac/np/images/thumb/4/43/Nook_Miles_Ticket_NH_Inv_Icon.png/80px-Nook_Miles_Ticket_NH_Inv_Icon.png", isFree: true });
                 } else if (i < 12) {
                     currentBingoCard.push(selectedVillagers[i]);
                 } else {
@@ -739,8 +859,12 @@
                 cell.onclick = () => toggleCell(index);
                 
                 if (villager.isFree) {
-                    cell.innerHTML = '<div class="villager-name">FREE SPACE</div>';
+                    cell.innerHTML = `
+                        <img src="${villager.image}" alt="FREE SPACE" class="villager-image" onerror="this.style.display='none'">
+                        <div class="villager-name">FREE SPACE</div>
+                    `;
                     clickedCells.add(index);
+                    cell.classList.add('clicked');
                 } else {
                     cell.innerHTML = `
                         <img src="${villager.image}" alt="${villager.name}" class="villager-image" onerror="this.style.display='none'">
@@ -766,6 +890,8 @@
         }
 
         function checkForBingo() {
+            console.log('Checking for bingo, clicked cells:', Array.from(clickedCells));
+            
             // Check rows
             for (let row = 0; row < 5; row++) {
                 let hasRow = true;
@@ -776,7 +902,8 @@
                     }
                 }
                 if (hasRow) {
-                    setTimeout(() => alert('🎉 BINGO! You got a row!'), 100);
+                    console.log('Found row bingo!');
+                    showBingoModal('You got a row!');
                     return;
                 }
             }
@@ -791,7 +918,7 @@
                     }
                 }
                 if (hasCol) {
-                    setTimeout(() => alert('🎉 BINGO! You got a column!'), 100);
+                    showBingoModal('You got a column!');
                     return;
                 }
             }
@@ -804,8 +931,21 @@
                 if (!clickedCells.has(i * 5 + (4 - i))) hasDiag2 = false;
             }
             if (hasDiag1 || hasDiag2) {
-                setTimeout(() => alert('🎉 BINGO! You got a diagonal!'), 100);
+                showBingoModal('You got a diagonal!');
             }
+        }
+
+        function showBingoModal(message) {
+            console.log('Showing bingo banner with message:', message);
+            const overlay = document.getElementById('bingoOverlay');
+            const messageElement = document.getElementById('bingoMessage');
+            messageElement.textContent = message;
+            overlay.classList.add('show');
+            
+            // Auto-hide the banner after 4 seconds
+            setTimeout(() => {
+                overlay.classList.remove('show');
+            }, 4000);
         }
 
         function downloadCard() {
@@ -831,5 +971,11 @@
             setTimeout(generateBingo, 500);
         });
     </script>
+
+    <!-- Bingo Celebration Banner -->
+    <div id="bingoOverlay" class="bingo-overlay">
+        <div class="bingo-title-big">🎉 BINGO! 🎉</div>
+        <div class="bingo-subtitle" id="bingoMessage"></div>
+    </div>
 </body>
 </html>
