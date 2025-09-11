@@ -816,6 +816,7 @@
 
         let currentBingoCard = [];
         let clickedCells = new Set();
+        let achievedBingos = new Set();
 
         function shuffleArray(array) {
             const newArray = [...array];
@@ -827,8 +828,9 @@
         }
 
         function generateBingo() {
-            // Reset clicked cells
+            // Reset clicked cells and bingo state
             clickedCells.clear();
+            achievedBingos.clear();
             
             // Shuffle villagers and select 24 (excluding center free space)
             const shuffledVillagers = shuffleArray(villagers);
@@ -901,10 +903,10 @@
                         break;
                     }
                 }
-                if (hasRow) {
-                    console.log('Found row bingo!');
-                    showBingoModal('You got a row!');
-                    return;
+                if (hasRow && !achievedBingos.has(`row-${row}`)) {
+                    console.log(`Found row ${row} bingo!`);
+                    achievedBingos.add(`row-${row}`);
+                    showBingoModal(`You got row ${row + 1}!`);
                 }
             }
             
@@ -917,9 +919,10 @@
                         break;
                     }
                 }
-                if (hasCol) {
-                    showBingoModal('You got a column!');
-                    return;
+                if (hasCol && !achievedBingos.has(`col-${col}`)) {
+                    console.log(`Found column ${col} bingo!`);
+                    achievedBingos.add(`col-${col}`);
+                    showBingoModal(`You got column ${col + 1}!`);
                 }
             }
             
@@ -930,7 +933,14 @@
                 if (!clickedCells.has(i * 5 + i)) hasDiag1 = false;
                 if (!clickedCells.has(i * 5 + (4 - i))) hasDiag2 = false;
             }
-            if (hasDiag1 || hasDiag2) {
+            if (hasDiag1 && !achievedBingos.has('diag-1')) {
+                console.log('Found diagonal 1 bingo!');
+                achievedBingos.add('diag-1');
+                showBingoModal('You got a diagonal!');
+            }
+            if (hasDiag2 && !achievedBingos.has('diag-2')) {
+                console.log('Found diagonal 2 bingo!');
+                achievedBingos.add('diag-2');
                 showBingoModal('You got a diagonal!');
             }
         }
